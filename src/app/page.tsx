@@ -1,7 +1,9 @@
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   return (
     <>
-      <p className="text-2xl text-red-700 bg-black">hello  </p>
+      <Button>hello</Button>
     </>
   );
 }
