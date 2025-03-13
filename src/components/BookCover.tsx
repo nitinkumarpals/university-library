@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
+import BookCoverSvg from "./BookCoverSvg";
 
 type BookCoverVariant = "extraSmall" | "small" | "medium" | "regular" | "wide";
 
@@ -17,7 +18,7 @@ interface Props {
   coverColor: string;
   coverImage: string;
 }
-const BookCover = ({
+const  BookCover = ({
   variant = "regular",
   className,
   coverColor = "#012B48",
@@ -27,18 +28,17 @@ const BookCover = ({
   return (
     <div
       className={cn(
-        "relative transition-all duration-300 min-h-[200px] min-w-[150px]",
+        "relative transition-all duration-300 min-h-[300px] min-w-[250px]",
         variantStyles[variant],
         className
       )}
       style={{ backgroundColor: coverColor }}
     >
-      {/* Book Side Svg */}
+      <BookCoverSvg coverColor={coverColor}/>
       <div
         className="absolute z-10"
         style={{ left: "12%", width: "87.5%", height: "88%" }}
       >
-        {/* Output the image URL for debugging */}
         <div className="sr-only">Loading image: {coverImage}</div>
 
         <Image
